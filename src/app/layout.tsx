@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Accelerator Wiki",
-  description: "A collaborative knowledge wiki powered by LLMs.",
+  title: "Lorebase",
+  description:
+    "AI Accelerator knowledge wiki — collaborative, agent-friendly documentation.",
 };
 
 export default function RootLayout({
