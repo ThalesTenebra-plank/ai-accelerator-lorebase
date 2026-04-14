@@ -1,41 +1,51 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Search } from "lucide-react"
+import { useEffect, type ComponentProps } from "react";
+import { Search } from "lucide-react";
 
-import { Input } from "@/components/ui/input"
-import { cn } from "@/lib/utils"
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
-type SearchBarProps = {
-  placeholder?: string
-  onSearch: (query: string) => void
-  className?: string
-}
+export type SearchBarProps = Omit<
+  ComponentProps<typeof Input>,
+  "value" | "onChange"
+> & {
+  value: string;
+  onChange: (value: string) => void;
+  onDebouncedChange?: (value: string) => void;
+  debounceMs?: number;
+};
 
-export function SearchBar({ placeholder = "Search…", onSearch, className }: SearchBarProps) {
-  const [value, setValue] = useState("")
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
+export function SearchBar({
+  value,
+  onChange,
+  onDebouncedChange,
+  debounceMs = 300,
+  className,
+  type = "search",
+  ...rest
+}: SearchBarProps) {
   useEffect(() => {
-    if (timerRef.current) clearTimeout(timerRef.current)
-    timerRef.current = setTimeout(() => {
-      onSearch(value)
-    }, 300)
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current)
-    }
-  }, [value, onSearch])
+    if (!onDebouncedChange) return;
+    const id = window.setTimeout(() => {
+      onDebouncedChange(value);
+    }, debounceMs);
+    return () => window.clearTimeout(id);
+  }, [value, debounceMs, onDebouncedChange]);
 
   return (
-    <div className={cn("relative w-full", className)}>
-      <Search className="absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+    <div className="relative">
+      <Search
+        className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+        aria-hidden
+      />
       <Input
-        type="search"
-        placeholder={placeholder}
+        type={type}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="pl-8"
+        onChange={(e) => onChange(e.target.value)}
+        className={cn("pl-8", className)}
+        {...rest}
       />
     </div>
-  )
+  );
 }

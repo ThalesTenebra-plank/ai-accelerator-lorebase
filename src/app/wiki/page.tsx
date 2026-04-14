@@ -1,4 +1,4 @@
-import { WikiListClient } from "@/components/WikiListClient";
+import { WikiBrowseClient } from "@/components/WikiBrowseClient";
 import { mockWikiPages } from "@/lib/mock-data";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function WikiPage() {
           {mockWikiPages.length} articles
         </p>
       </div>
-      <WikiListClient pages={mockWikiPages} />
+      <WikiBrowseClient pages={mockWikiPages} />
     </main>
   );
 }
