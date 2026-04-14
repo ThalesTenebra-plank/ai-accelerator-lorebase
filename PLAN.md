@@ -39,7 +39,7 @@
 - [x] **Task 10** -- Build the Wiki list page `src/app/wiki/page.tsx` listing all mock wiki pages using `WikiCard` in a responsive grid
 - [ ] **Task 11** -- Build the Wiki detail page `src/app/wiki/[slug]/page.tsx` rendering a single mock page (title, tags, markdown body as plain text for now)
 - [ ] **Task 12** -- Build the Ingest page `src/app/ingest/page.tsx` with a `Textarea` and `Button` (shadcn) — form submits but shows a "LLM not configured" toast for now
-- [ ] **Task 13** -- Build the Query page `src/app/query/page.tsx` with an `Input` + `Button` and a mocked response bubble — no real LLM call
+- [x] **Task 13** -- Build the Query page `src/app/query/page.tsx` with an `Input` + `Button` and a mocked response bubble — no real LLM call
 - [ ] **Task 14** -- Build the Lint page `src/app/lint/page.tsx` showing a mocked health report (hardcoded warnings and suggestions using mock data)
 
 ---
