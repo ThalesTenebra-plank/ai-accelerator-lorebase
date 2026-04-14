@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a64117 (apply Layout wrapper and wire global font + base styles)
 import Layout from "@/components/Layout";
 import "./globals.css";
 
