@@ -1,4 +1,4 @@
-import WikiCard from "@/components/WikiCard";
+import { WikiListClient } from "@/components/WikiListClient";
 import { mockWikiPages } from "@/lib/mock-data";
 
 export const metadata = {
@@ -15,11 +15,7 @@ export default function WikiPage() {
           {mockWikiPages.length} articles
         </p>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {mockWikiPages.map((page) => (
-          <WikiCard key={page.slug} page={page} />
-        ))}
-      </div>
+      <WikiListClient pages={mockWikiPages} />
     </main>
   );
 }
