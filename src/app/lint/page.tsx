@@ -2,8 +2,11 @@ import Link from "next/link";
 import { AlertTriangle, ListChecks } from "lucide-react";
 
 import { PageHeader } from "@/components/PageHeader";
+import { CategoryBadge } from "@/components/CategoryBadge";
 import { mockWikiPages } from "@/lib/mock-data";
 import type { WikiLintResult } from "@/types/wiki";
+
+const mockCategories = [...new Set(mockWikiPages.map((p) => p.category))];
 
 const MOCK_LINT_RESULT = {
   status: "warning",
@@ -117,6 +120,14 @@ export default function LintPage() {
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             {result.summary}
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium text-muted-foreground">
+              Categories in dataset:
+            </span>
+            {mockCategories.map((category) => (
+              <CategoryBadge key={category} category={category} />
+            ))}
+          </div>
           <p className="mt-4 text-xs text-muted-foreground">
             Pages in mock dataset:{" "}
             {mockWikiPages.map((p) => p.slug).join(", ")}

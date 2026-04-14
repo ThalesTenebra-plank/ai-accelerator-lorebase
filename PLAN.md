@@ -48,7 +48,7 @@
 
 - [x] **Task 15** -- Create `src/components/WikiCard.tsx` using shadcn `Card` — shows title, category badge, and short summary
 - [x] **Task 16** -- Create `src/components/SearchBar.tsx` using shadcn `Input` with a search icon, controlled state, and debounce (no backend needed)
-- [ ] **Task 17** -- Create `src/components/CategoryBadge.tsx` using shadcn `Badge` with a color per category
+- [x] **Task 17** -- Create `src/components/CategoryBadge.tsx` using shadcn `Badge` with a color per category
 - [x] **Task 18** -- Create `src/components/EmptyState.tsx` — a reusable empty state illustration + message component
 - [x] **Task 19** -- Create `src/components/PageHeader.tsx` — reusable page title + subtitle header used across all pages
 
@@ -56,7 +56,7 @@
 
 ## API Routes (stub, no LLM)
 
-- [ ] **Task 20** -- Create `src/app/api/wiki/route.ts` — GET returns mock wiki pages as JSON, POST accepts body and echoes it back (stub)
+- [x] **Task 20** -- Create `src/app/api/wiki/route.ts` — GET returns mock wiki pages as JSON, POST accepts body and echoes it back (stub)
 - [ ] **Task 21** -- Create `src/app/api/ingest/route.ts` — accepts `{ text }`, returns `{ status: "ok", message: "LLM not configured yet" }`
 - [ ] **Task 22** -- Create `src/app/api/query/route.ts` — accepts `{ question }`, returns a hardcoded mock answer
 - [ ] **Task 23** -- Create `src/app/api/lint/route.ts` — returns a hardcoded `WikiLintResult` with mock warnings
