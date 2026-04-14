@@ -35,7 +35,7 @@
 
 ## UI Pages
 
-- [ ] **Task 09** -- Build the home page `src/app/page.tsx` with a hero section, tagline, and cards linking to Wiki, Ingest, Query, and Lint
+- [x] **Task 09** -- Build the home page `src/app/page.tsx` with a hero section, tagline, and cards linking to Wiki, Ingest, Query, and Lint
 - [ ] **Task 10** -- Build the Wiki list page `src/app/wiki/page.tsx` listing all mock wiki pages using `WikiCard` in a responsive grid
 - [ ] **Task 11** -- Build the Wiki detail page `src/app/wiki/[slug]/page.tsx` rendering a single mock page (title, tags, markdown body as plain text for now)
 - [ ] **Task 12** -- Build the Ingest page `src/app/ingest/page.tsx` with a `Textarea` and `Button` (shadcn) — form submits but shows a "LLM not configured" toast for now
