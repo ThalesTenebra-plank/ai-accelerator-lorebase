@@ -20,7 +20,7 @@
 - [x] **Task 01** -- Install and init shadcn/ui (`npx shadcn@latest init`) and configure `components.json`
 - [ ] **Task 02** -- Create `.env.example` documenting future vars (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) — no real keys needed yet
 - [x] **Task 03** -- Create `src/components/Layout.tsx` with a top navbar (logo + nav links: Wiki, Ingest, Query, Lint) using shadcn `Button` and `Separator`
-- [ ] **Task 04** -- Apply the layout in `src/app/layout.tsx` and set a global font + base Tailwind styles
+- [x] **Task 04** -- Apply the layout in `src/app/layout.tsx` and set a global font + base Tailwind styles
 
 ---
 
