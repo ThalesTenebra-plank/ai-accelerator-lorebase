@@ -1,11 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# cursor (local IDE project config; remove this line if the team commits shared commands/rules)
+.cursor/
+
 # dependencies
 /node_modules
 yarn.lock
-
-# cursor (local IDE project config; remove this line if the team commits shared commands/rules)
-.cursor/
+pnpm-lock.yaml
+package-lock.json
 /.pnp
 .pnp.*
 .yarn/*
@@ -35,7 +37,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
 
 # vercel
 .vercel

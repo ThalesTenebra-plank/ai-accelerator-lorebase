@@ -19,15 +19,15 @@
 
 - [x] **Task 01** -- Install and init shadcn/ui (`npx shadcn@latest init`) and configure `components.json`
 - [ ] **Task 02** -- Create `.env.example` documenting future vars (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) — no real keys needed yet
-- [ ] **Task 03** -- Create `src/components/Layout.tsx` with a top navbar (logo + nav links: Wiki, Ingest, Query, Lint) using shadcn `Button` and `Separator`
-- [ ] **Task 04** -- Apply the layout in `src/app/layout.tsx` and set a global font + base Tailwind styles
+- [x] **Task 03** -- Create `src/components/Layout.tsx` with a top navbar (logo + nav links: Wiki, Ingest, Query, Lint) using shadcn `Button` and `Separator`
+- [x] **Task 04** -- Apply the layout in `src/app/layout.tsx` and set a global font + base Tailwind styles
 
 ---
 
 ## Types & Mock Data
 
 - [x] **Task 05** -- Create `src/types/wiki.ts` with TypeScript types: `WikiPage`, `WikiSource`, `WikiLintResult`
-- [ ] **Task 06** -- Create `src/lib/mock-data.ts` with 5 hardcoded `WikiPage` objects to use as placeholder data across all pages
+- [x] **Task 06** -- Create `src/lib/mock-data.ts` with 5 hardcoded `WikiPage` objects to use as placeholder data across all pages
 - [x] **Task 07** -- Create `src/lib/schema.ts` with a wiki schema config (categories list, page template shape, metadata fields)
 - [ ] **Task 08** -- Create `src/lib/prompts.ts` with prompt template strings for `ingest`, `query`, and `lint` — no LLM calls, just the text templates
 
