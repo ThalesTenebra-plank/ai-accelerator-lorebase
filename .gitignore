@@ -3,9 +3,12 @@
 # cursor (local IDE project config; remove this line if the team commits shared commands/rules)
 .cursor/
 
+# explicit paths (optional local slash commands / lock noise)
+.cursor/commands/open-pr.md
+yarn.lock
+
 # dependencies
 /node_modules
-yarn.lock
 pnpm-lock.yaml
 package-lock.json
 /.pnp

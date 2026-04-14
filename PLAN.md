@@ -35,18 +35,18 @@
 
 ## UI Pages
 
-- [ ] **Task 09** -- Build the home page `src/app/page.tsx` with a hero section, tagline, and cards linking to Wiki, Ingest, Query, and Lint
-- [ ] **Task 10** -- Build the Wiki list page `src/app/wiki/page.tsx` listing all mock wiki pages using `WikiCard` in a responsive grid
-- [ ] **Task 11** -- Build the Wiki detail page `src/app/wiki/[slug]/page.tsx` rendering a single mock page (title, tags, markdown body as plain text for now)
+- [x] **Task 09** -- Build the home page `src/app/page.tsx` with a hero section, tagline, and cards linking to Wiki, Ingest, Query, and Lint
+- [x] **Task 10** -- Build the Wiki list page `src/app/wiki/page.tsx` listing all mock wiki pages using `WikiCard` in a responsive grid
+- [x] **Task 11** -- Build the Wiki detail page `src/app/wiki/[slug]/page.tsx` rendering a single mock page (title, tags, markdown body as plain text for now)
 - [x] **Task 12** -- Build the Ingest page `src/app/ingest/page.tsx` with a `Textarea` and `Button` (shadcn) — form submits but shows a "LLM not configured" toast for now
-- [ ] **Task 13** -- Build the Query page `src/app/query/page.tsx` with an `Input` + `Button` and a mocked response bubble — no real LLM call
-- [ ] **Task 14** -- Build the Lint page `src/app/lint/page.tsx` showing a mocked health report (hardcoded warnings and suggestions using mock data)
+- [x] **Task 13** -- Build the Query page `src/app/query/page.tsx` with an `Input` + `Button` and a mocked response bubble — no real LLM call
+- [x] **Task 14** -- Build the Lint page `src/app/lint/page.tsx` showing a mocked health report (hardcoded warnings and suggestions using mock data)
 
 ---
 
 ## Components
 
-- [ ] **Task 15** -- Create `src/components/WikiCard.tsx` using shadcn `Card` — shows title, category badge, and short summary
+- [x] **Task 15** -- Create `src/components/WikiCard.tsx` using shadcn `Card` — shows title, category badge, and short summary
 - [ ] **Task 16** -- Create `src/components/SearchBar.tsx` using shadcn `Input` with a search icon, controlled state, and debounce (no backend needed)
 - [ ] **Task 17** -- Create `src/components/CategoryBadge.tsx` using shadcn `Badge` with a color per category
 - [ ] **Task 18** -- Create `src/components/EmptyState.tsx` — a reusable empty state illustration + message component
