@@ -46,7 +46,7 @@
 
 ## Components
 
-- [ ] **Task 15** -- Create `src/components/WikiCard.tsx` using shadcn `Card` — shows title, category badge, and short summary
+- [x] **Task 15** -- Create `src/components/WikiCard.tsx` using shadcn `Card` — shows title, category badge, and short summary
 - [ ] **Task 16** -- Create `src/components/SearchBar.tsx` using shadcn `Input` with a search icon, controlled state, and debounce (no backend needed)
 - [ ] **Task 17** -- Create `src/components/CategoryBadge.tsx` using shadcn `Badge` with a color per category
 - [ ] **Task 18** -- Create `src/components/EmptyState.tsx` — a reusable empty state illustration + message component
