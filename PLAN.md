@@ -28,7 +28,7 @@
 
 - [x] **Task 05** -- Create `src/types/wiki.ts` with TypeScript types: `WikiPage`, `WikiSource`, `WikiLintResult`
 - [x] **Task 06** -- Create `src/lib/mock-data.ts` with 5 hardcoded `WikiPage` objects to use as placeholder data across all pages
-- [ ] **Task 07** -- Create `src/lib/schema.ts` with a wiki schema config (categories list, page template shape, metadata fields)
+- [x] **Task 07** -- Create `src/lib/schema.ts` with a wiki schema config (categories list, page template shape, metadata fields)
 - [ ] **Task 08** -- Create `src/lib/prompts.ts` with prompt template strings for `ingest`, `query`, and `lint` — no LLM calls, just the text templates
 
 ---
