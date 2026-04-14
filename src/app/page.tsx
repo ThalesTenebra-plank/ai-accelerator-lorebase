@@ -6,6 +6,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { PageHeader } from "@/components/PageHeader";
+
 const features = [
   {
     href: "/wiki",
@@ -38,13 +40,12 @@ export default function Home() {
     <div className="flex flex-1 flex-col bg-background">
       <div className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
         <header className="mb-12 max-w-2xl">
-          <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Lorebase
-          </h1>
-          <p className="mt-3 text-lg text-muted-foreground">
-            The AI Accelerator knowledge wiki — collaborative, agent-friendly,
-            and built for teams who ship with AI.
-          </p>
+          <PageHeader
+            size="lg"
+            title="Lorebase"
+            description="The AI Accelerator knowledge wiki — collaborative, agent-friendly, and built for teams who ship with AI."
+            descriptionClassName="mt-3 text-lg text-muted-foreground"
+          />
         </header>
 
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

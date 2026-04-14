@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { toast } from "sonner"
 
+import { PageHeader } from "@/components/PageHeader"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Toaster } from "@/components/ui/sonner"
@@ -29,12 +30,10 @@ export default function IngestPage() {
     <>
       <Toaster position="bottom-right" />
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12 sm:px-6">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Ingest</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Paste any raw text and an LLM will extract a structured wiki article.
-          </p>
-        </div>
+        <PageHeader
+          title="Ingest"
+          description="Paste any raw text and an LLM will extract a structured wiki article."
+        />
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Textarea
             placeholder="Paste your source text here…"
