@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import type { WikiPage } from "@/types/wiki";
-import { Badge } from "@/components/ui/badge";
+import { CategoryBadge } from "@/components/CategoryBadge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type WikiCardProps = {
@@ -16,9 +16,7 @@ export default function WikiCard({ page }: WikiCardProps) {
     >
       <Card className="h-full transition-shadow hover:shadow-md">
         <CardHeader>
-          <Badge variant="secondary" className="w-fit">
-            {page.category}
-          </Badge>
+          <CategoryBadge category={page.category} className="w-fit" />
           <CardTitle>{page.title}</CardTitle>
         </CardHeader>
         <CardContent>
