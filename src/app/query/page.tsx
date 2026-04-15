@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,9 @@ export default function QueryPage() {
     e.preventDefault();
     if (!question.trim()) return;
     setAnswer(MOCK_ANSWER);
+    toast.info("Mock answer returned", {
+      description: "Set an API key in .env.local to enable real queries.",
+    });
   }
 
   return (
