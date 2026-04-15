@@ -70,7 +70,7 @@
 
 ## Polish
 
-- [ ] **Task 24** -- Add shadcn `Toaster` globally and wire up toast feedback on Ingest and Query form submissions
+- [x] **Task 24** -- Add shadcn `Toaster` globally and wire up toast feedback on Ingest and Query form submissions
 - [ ] **Task 25** -- Update `README.md` with project overview, stack, folder structure, and instructions to run locally
 
 ---
