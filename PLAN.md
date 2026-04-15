@@ -57,8 +57,13 @@
 ## API Routes (stub, no LLM)
 
 - [x] **Task 20** -- Create `src/app/api/wiki/route.ts` — GET returns mock wiki pages as JSON, POST accepts body and echoes it back (stub)
+<<<<<<< feat/task-22
 - [ ] **Task 21** -- Create `src/app/api/ingest/route.ts` — accepts `{ text }`, returns `{ status: "ok", message: "LLM not configured yet" }`
 - [x] **Task 22** -- Create `src/app/api/query/route.ts` — accepts `{ question }`, returns a hardcoded mock answer
+=======
+- [x] **Task 21** -- Create `src/app/api/ingest/route.ts` — accepts `{ text }`, returns `{ status: "ok", message: "LLM not configured yet" }`
+- [ ] **Task 22** -- Create `src/app/api/query/route.ts` — accepts `{ question }`, returns a hardcoded mock answer
+>>>>>>> main
 - [ ] **Task 23** -- Create `src/app/api/lint/route.ts` — returns a hardcoded `WikiLintResult` with mock warnings
 
 ---
