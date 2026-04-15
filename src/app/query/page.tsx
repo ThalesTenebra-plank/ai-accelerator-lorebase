@@ -6,20 +6,42 @@ import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-const MOCK_ANSWER =
-  "Based on the wiki, React Server Components let you render components on the server, reducing client-side JavaScript. They cannot use browser APIs or React hooks — add `'use client'` only when those are needed. (React Server Components)";
+type QueryResponse =
+  | { answer: string; question: string; source: string }
+  | { error: string };
 
 export default function QueryPage() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState<string | null>(null);
+  const [isPending, setIsPending] = useState(false);
 
-  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!question.trim()) return;
-    setAnswer(MOCK_ANSWER);
-    toast.info("Mock answer returned", {
-      description: "Set an API key in .env.local to enable real queries.",
-    });
+    const trimmed = question.trim();
+    if (!trimmed) return;
+
+    setIsPending(true);
+    setAnswer(null);
+
+    try {
+      const response = await fetch("/api/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: trimmed }),
+      });
+
+      const data = (await response.json()) as QueryResponse;
+      if (!response.ok) {
+        setAnswer("error" in data ? data.error : "Request failed.");
+        return;
+      }
+
+      setAnswer("answer" in data ? data.answer : "No answer returned.");
+    } catch {
+      setAnswer("Request failed.");
+    } finally {
+      setIsPending(false);
+    }
   }
 
   return (
@@ -37,8 +59,8 @@ export default function QueryPage() {
           onChange={(e) => setQuestion(e.target.value)}
           className="flex-1"
         />
-        <Button type="submit" disabled={!question.trim()}>
-          Ask
+        <Button type="submit" disabled={isPending || !question.trim()}>
+          {isPending ? "Asking…" : "Ask"}
         </Button>
       </form>
 
