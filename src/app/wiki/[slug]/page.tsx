@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { PageHeader } from "@/components/PageHeader";
 import { mockWikiPages } from "@/lib/mock-data";
 
 type WikiDetailPageProps = {
@@ -32,10 +33,13 @@ export default async function WikiDetailPage({ params }: WikiDetailPageProps) {
   return (
     <div className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6">
       <header className="mb-8">
-        <p className="text-sm text-muted-foreground">{page.category}</p>
-        <h1 className="mt-1 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          {page.title}
-        </h1>
+        <PageHeader
+          size="lg"
+          eyebrow={
+            <p className="text-sm text-muted-foreground">{page.category}</p>
+          }
+          title={page.title}
+        />
         {page.tags.length > 0 ? (
           <ul className="mt-4 flex flex-wrap gap-2">
             {page.tags.map((tag) => (

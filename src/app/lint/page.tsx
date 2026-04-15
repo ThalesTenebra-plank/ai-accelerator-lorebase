@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AlertTriangle, ListChecks } from "lucide-react";
 
+import { PageHeader } from "@/components/PageHeader";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { mockWikiPages } from "@/lib/mock-data";
 import type { WikiLintResult } from "@/types/wiki";
@@ -61,22 +62,30 @@ export default function LintPage() {
       <div className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <ListChecks className="size-5 shrink-0 text-primary" aria-hidden />
-              <span className="text-sm font-medium uppercase tracking-wide">
-                Health check
-              </span>
-            </div>
-            <h1 className="font-heading mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Lint
-            </h1>
-            <p className="mt-2 text-muted-foreground">
-              Static mock report derived from{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
-                mockWikiPages
-              </code>
-              . No API or LLM calls yet.
-            </p>
+            <PageHeader
+              size="lg"
+              eyebrow={
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <ListChecks
+                    className="size-5 shrink-0 text-primary"
+                    aria-hidden
+                  />
+                  <span className="text-sm font-medium uppercase tracking-wide">
+                    Health check
+                  </span>
+                </div>
+              }
+              title="Lint"
+              description={
+                <>
+                  Static mock report derived from{" "}
+                  <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
+                    mockWikiPages
+                  </code>
+                  . No API or LLM calls yet.
+                </>
+              }
+            />
           </div>
           <div
             className="flex shrink-0 items-center gap-2 rounded-xl border border-border bg-card px-4 py-3 text-card-foreground shadow-sm"
