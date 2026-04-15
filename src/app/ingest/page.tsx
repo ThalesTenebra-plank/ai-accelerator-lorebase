@@ -6,7 +6,6 @@ import { toast } from "sonner"
 import { PageHeader } from "@/components/PageHeader"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Toaster } from "@/components/ui/sonner"
 
 export default function IngestPage() {
   const [text, setText] = useState("")
@@ -27,9 +26,7 @@ export default function IngestPage() {
   }
 
   return (
-    <>
-      <Toaster position="bottom-right" />
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12 sm:px-6">
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12 sm:px-6">
         <PageHeader
           title="Ingest"
           description="Paste any raw text and an LLM will extract a structured wiki article."
@@ -46,7 +43,6 @@ export default function IngestPage() {
             {isPending ? "Processing…" : "Ingest"}
           </Button>
         </form>
-      </div>
-    </>
+    </div>
   )
 }
