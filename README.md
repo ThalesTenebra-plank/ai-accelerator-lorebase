@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Accelerator LoreBase
 
-## Getting Started
+A collaborative knowledge wiki powered by LLMs — built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. Inspired by [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript (strict) |
+| Styling | Tailwind CSS v4 |
+| UI Components | shadcn/ui v4 |
+| Package Manager | pnpm |
+
+## Features
+
+- **Wiki** — Browse and read knowledge articles in a responsive card grid
+- **Ingest** — Submit text to be processed and added to the wiki (LLM stub)
+- **Query** — Ask questions and get answers from the wiki (LLM stub)
+- **Lint** — View a health report of wiki content with warnings and suggestions
+
+## Folder Structure
+
+```
+src/
+├── app/                  # Routes, layouts, pages
+│   ├── api/              # API route handlers
+│   │   ├── ingest/       # POST /api/ingest
+│   │   ├── lint/         # GET /api/lint
+│   │   ├── query/        # POST /api/query
+│   │   └── wiki/         # GET /api/wiki, POST /api/wiki
+│   ├── ingest/           # Ingest page
+│   ├── lint/             # Lint page
+│   ├── query/            # Query page
+│   ├── wiki/             # Wiki list + detail pages
+│   │   └── [slug]/       # Individual wiki article
+│   ├── globals.css
+│   ├── layout.tsx        # Root layout with navbar and Toaster
+│   └── page.tsx          # Home page
+├── components/
+│   ├── ui/               # shadcn/ui primitives (CLI-managed, do not hand-edit)
+│   ├── CategoryBadge.tsx
+│   ├── EmptyState.tsx
+│   ├── Layout.tsx        # Top navbar
+│   ├── PageHeader.tsx
+│   ├── SearchBar.tsx
+│   └── WikiCard.tsx
+├── lib/
+│   ├── mock-data.ts      # Hardcoded WikiPage objects for development
+│   ├── prompts.ts        # Prompt templates for ingest, query, lint
+│   ├── schema.ts         # Wiki schema config (categories, page template)
+│   └── utils.ts          # cn() and shared utilities
+├── hooks/                # Custom React hooks (client-side)
+└── types/
+    └── wiki.ts           # WikiPage, WikiSource, WikiLintResult types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   pnpm install
+   ```
 
-## Learn More
+2. **Set up environment variables**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Fill in any required values (see `.env.example` for documentation).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Start the dev server**
 
-## Deploy on Vercel
+   ```bash
+   pnpm dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Build for production**
+
+   ```bash
+   pnpm build
+   pnpm start
+   ```
+
+## Other Commands
+
+```bash
+pnpm lint          # Run ESLint
+npx tsc --noEmit   # Type-check without emitting
+npx shadcn@latest add <component>   # Add a shadcn/ui component
+```
+
+## Environment Variables
+
+See `.env.example` for all supported variables. The main ones needed for LLM integration (not yet wired up):
+
+| Variable | Description |
+|---|---|
+| `ANTHROPIC_API_KEY` | API key for Anthropic Claude |
+| `OPENAI_API_KEY` | API key for OpenAI |
+
+> LLM integration is intentionally out of scope for the current milestone. All AI routes return stubs. Wiring an API key is the only remaining step.
